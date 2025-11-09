@@ -1,148 +1,118 @@
-# 🎨 CollabCanva — Real-Time Collaborative Drawing App
+# SyncSketch — Real-Time Collaborative Drawing App
 
-**CollabCanva** is a real-time collaborative drawing application that allows multiple users to draw, erase, and perform undo/redo operations together on a shared canvas.  
-It is built using **Node.js**, **Express.js**, and **Socket.IO**, enabling low-latency communication and smooth synchronization between all connected users.
+**Syncsketch** is a real-time collaborative drawing application that enables multiple users to draw, erase, and perform undo/redo operations simultaneously on a shared digital canvas.  
+It is built using **Node.js**, **Express.js**, and **WebSockets (Socket.IO)** to provide smooth synchronization and real-time collaboration between users.
 
-The project demonstrates real-time WebSocket communication, canvas rendering, and shared state management across multiple clients.
+This project demonstrates real-time event handling, canvas rendering, shared drawing states, and global undo/redo management across multiple clients.
 
 ---
 
 ## ⚙️ Setup Instructions
 
-Follow the steps below to run this project locally on your machine:
+Follow these steps to run the project locally on your machine:
 
-### Step 1: Clone the Repository
+### 🧩 Step 1: Clone the Repository
 ```bash
 git clone https://github.com/Praveen20cent/Collabcanva.git
 cd Collabcanva
-Step 2: Install Dependencies
-bash
-Copy code
+
+⚙️ Step 2: Install Dependencies
 npm install
-Step 3: Start the Server
-bash
-Copy code
+
+▶️ Step 3: Start the Server
 npm start
-By default, the application will start on:
+```
+
+
+By default, the application will run on:
 👉 http://localhost:3000
 
-You can also try the hosted version here:
+Alternatively, you can view the deployed version here:
 🌍 Live App: https://syncsketch-66qw.onrender.com
 
-🧪 How to Test with Multiple Users
-To test collaboration features:
+### 🧪 How to Test with Multiple Users
 
-Open multiple browser tabs or different devices pointing to either:
+**To test collaboration features:**
+
+Open multiple browser tabs or different devices pointing to:
 
 Local version → http://localhost:3000
 
-Deployed version → https://syncsketch-66qw.onrender.com
+Deployed version → **https://syncsketch-66qw.onrender.com**
 
-In one tab, start drawing on the canvas using your mouse.
+In one tab, start drawing — strokes will instantly appear on all other connected tabs.
 
-The drawing will instantly appear on all other connected tabs or devices.
+**Try the following actions:**
 
-Try the following actions:
+🎨 Draw with different brush colors
 
-🎨 Draw with different brush colors.
+🧽 Use the eraser to remove strokes
 
-🧽 Use the eraser to remove drawn lines.
+↩️ Use undo/redo buttons
 
-↩️ Use undo and redo buttons to revert or restore changes.
+👥 Draw from multiple tabs at the same time
 
-👥 Draw from two tabs simultaneously and watch the real-time synchronization.
+**This confirms that WebSocket-based synchronization is functioning correctly.**
 
-This confirms that WebSocket-based event broadcasting and multi-user updates are working correctly.
+### 💡 Features
 
-💡 Features
 ✏️ Real-time collaborative drawing
 
-🎨 Customizable brush colors
+🧽 Eraser functionality for clearing strokes
 
-🧽 Eraser tool for removing strokes
+↩️ Undo/Redo actions (global)
 
-↩️ Undo/Redo functionality (global)
+🎨 Custom brush color selection
 
-👥 Multi-user real-time synchronization
+👥 Multi-user synchronization
 
-⚡ Built on WebSocket protocol using Socket.IO
+⚡ Low-latency WebSocket communication via Socket.IO
 
-📁 Project Structure
-php
-Copy code
-Collabcanva/
-│
-├── public/
-│   ├── index.html          # Main drawing UI
-│   ├── style.css           # Canvas and layout styling
-│   └── script.js           # Client-side drawing and socket handling
-│
-├── server.js               # Node.js + Socket.IO server logic
-├── package.json            # Dependencies and npm scripts
-├── README.md               # Documentation
-└── ARCHITECTURE.md         # System architecture details
-🧰 Technologies Used
-Component	Technology
-Frontend	HTML, CSS, JavaScript (Canvas API)
-Backend	Node.js, Express.js
-Communication	Socket.IO (WebSockets)
-Deployment	Render
-Version Control	Git + GitHub
+### 📂 Project Structure
 
-🐞 Known Limitations / Bugs
-Issue	Description
-⏳ Eraser Lag	On slower internet connections, the eraser may appear slightly delayed for other users.
-🔁 Global Undo/Redo	Undo and redo affect the global canvas, not per user.
-📏 Canvas Resizing	Resizing or refreshing the browser clears the current drawing.
-⚡ Performance Drops	Slight lag may occur if many users draw continuously at the same time.
-🚫 No Authentication	Currently, there’s no login system — any user can join and draw.
+<img width="855" height="591" alt="image" src="https://github.com/user-attachments/assets/629762f8-4f3f-4b1b-b721-13416efb0669" />
 
-⏱️ Time Spent on the Project
-Task	Time Taken
-Project setup (Node.js + Socket.IO configuration)	2 hours
-Canvas drawing implementation	3 hours
-Undo/Redo and eraser logic	2 hours
-Multi-user synchronization testing	1 hour
-Documentation and deployment	1 hour
-Total Time Spent	≈ 9 hours
 
-🧑‍💻 Author
+### 🧰 Technologies Used
+| Component                   | Technology                         |
+| --------------------------- | ---------------------------------- |
+| **Frontend**                | HTML, CSS, JavaScript (Canvas API) |
+| **Backend**                 | Node.js, Express.js                |
+| **Real-Time Communication** | WebSockets via Socket.IO           |
+| **Deployment**              | Render                             |
+| **Version Control**         | Git + GitHub                       |
+  
+### 🐞 Known Limitations / Bugs
+| Issue                    | Description                                                       |
+| ------------------------ | ----------------------------------------------------------------- |
+| ⏳ **Eraser Lag**         | The eraser may appear slightly delayed on slower networks.        |
+| 🔁 **Global Undo/Redo**  | Undo/Redo actions apply globally for all users, not individually. |
+| 📏 **Canvas Resizing**   | Resizing or refreshing the browser clears the current canvas.     |
+| ⚡ **Performance Drops**  | Minor lag may occur when many users draw simultaneously.          |
+| 🚫 **No Authentication** | Any user can join and draw; there is no login system.             |
+
+### Task	Duration
+| Task                                    | Duration      |
+| --------------------------------------- | ------------- |
+| 🏗️ Project setup (Node.js + Socket.IO) | 2 hours       |
+| 🎨 Frontend canvas implementation       | 3 hours       |
+| 🔁 Undo/Redo + Eraser functionality     | 2 hours       |
+| 👥 Multi-user synchronization testing   | 1 hour        |
+| 🧾 Documentation & deployment           | 1 hour        |
+| **🕒 Total Time Spent**                 | **≈ 9 hours** |
+
+
+
+### 👨‍💻 Author
+
 Praveen K
+
 🔗 GitHub Profile
-🌐 Live Application on Render
 
-🪪 License
+🌐 Live App on Render
+
+
+### 🪪 License
+
 This project is licensed under the MIT License.
-You may freely use, modify, and distribute it for personal or educational purposes.
-
-✅ Summary
-This project showcases:
-
-Real-time collaborative event handling using Socket.IO
-
-Canvas state management across multiple clients
-
-Undo/Redo functionality using stroke history
-
-Clean and modular code structure using Express and vanilla JS
-
-Live deployment on Render for easy accessibility
-
-🧩 Run Command
-To install and start the project in one step:
-
-bash
-Copy code
-npm install && npm start
-Then open your browser at http://localhost:3000
-
-⭐ If you liked this project or found it useful, please give it a star on GitHub!
-
-yaml
-Copy code
-
----
-
-This version is **ready for direct submission** — no placeholders, no missing details, just clean, Markdown-rich formatting that looks great on GitHub.  
-
-Would you like me to add a **tiny “project overview paragraph”** at the top (2–3 lines, like an intro for your report submiss
+You are free to use, modify, and distribute it for personal or educational purposes.
