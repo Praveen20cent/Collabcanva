@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Collaborative Canvas</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="toolbar">
+    <div class="brand">
+      <div class="dot"></div>
+      <span class="title">CollCanvas</span>
+    </div>
+    <div class="controls">
+      <div class="control-group">
+        <label class="label">Tool</label>
+        <select id="tool" class="select">
+          <option value="brush">Brush</option>
+          <option value="eraser">Eraser</option>
+        </select>
+      </div>
+      <div class="control-group">
+        <label class="label">Width</label>
+        <div class="slider-wrap">
+          <input id="width" type="range" min="1" max="40" value="4"/>
+          <span id="widthValue" class="slider-value">4</span>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="label">Color</label>
+        <input id="color" type="color" value="#000000">
+      </div>
+      <button id="undo" class="btn" title="Undo" aria-label="Undo">
+        ⟲ Undo
+      </button>
+      <button id="redo" class="btn" title="Redo" aria-label="Redo">
+        ⟳ Redo
+      </button>
+    </div>
+    <div class="status">
+      <span class="status-dot" aria-hidden="true"></span>
+      <span id="status">Not connected</span>
+    </div>
+  </div>
+
+  <div id="canvasWrap">
+    <canvas id="backCanvas"></canvas>
+    <canvas id="topCanvas"></canvas>
+    <div id="cursorsLayer" aria-hidden="true"></div>
+  </div>
+
+  <div id="sidebar">
+    <h3>Users</h3>
+    <ul id="users"></ul>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="websocket.js"></script>
+  <script src="canvas.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
