@@ -2,6 +2,7 @@ const SocketClient = (() => {
     let socket = null;
   
     function connect({ url = location.origin, roomId = "default", clientId = null, name = null } = {}) {
+      if (socket) socket.disconnect();
       socket = io(url);
       socket.on("connect", () => console.log("socket connected:", socket.id));
   

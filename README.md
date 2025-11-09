@@ -1,4 +1,4 @@
-# Collaborative Canvas
+# SyncSketch
 
 ### Run Instructions
 1. Install dependencies:

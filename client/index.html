@@ -3,14 +3,15 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Collaborative Canvas</title>
+  <title>SyncSketch</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div id="toolbar">
     <div class="brand">
       <div class="dot"></div>
-      <span class="title">CollCanvas</span>
+      <span class="title">SyncSketch</span>
     </div>
     <div class="controls">
       <div class="control-group">
@@ -18,6 +19,8 @@
         <select id="tool" class="select">
           <option value="brush">Brush</option>
           <option value="eraser">Eraser</option>
+          <option value="rectangle">Rectangle</option>
+          <option value="circle">Circle</option>
         </select>
       </div>
       <div class="control-group">
@@ -37,10 +40,18 @@
       <button id="redo" class="btn" title="Redo" aria-label="Redo">
         ⟳ Redo
       </button>
+      <div class="control-group">
+        <input type="text" id="roomInput" placeholder="Room ID" class="room-input" />
+        <button id="joinRoom" class="btn" title="Join Room">Join</button>
+      </div>
+      <button id="save" class="btn" title="Save Drawing">💾 Save</button>
+      <button id="load" class="btn" title="Load Drawing">📂 Load</button>
+      <input type="file" id="loadFile" accept=".json" style="display: none;" />
     </div>
     <div class="status">
       <span class="status-dot" aria-hidden="true"></span>
       <span id="status">Not connected</span>
+      <span id="roomStatus" class="room-status"></span>
     </div>
   </div>
 
