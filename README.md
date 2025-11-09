@@ -103,13 +103,9 @@ In one tab, start drawing — strokes will instantly appear on all other connect
 
 
 
-### 👨‍💻 Author
+### Architecture Diagram
 
-Praveen K
-
-🔗 GitHub Profile
-
-🌐 Live App on Render
+<img width="1228" height="655" alt="image" src="https://github.com/user-attachments/assets/0744226b-afc6-40f7-a63f-7fc080c5baeb" />
 
 
 ### 🪪 License
