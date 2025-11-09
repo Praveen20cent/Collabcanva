@@ -73,6 +73,10 @@ io.on("connection", (socket) => {
 
   socket.on("cursor", (msg) => socket.to(socket.data.roomId).emit("cursor", msg));
 
+  socket.on("ping", (msg) => {
+    socket.emit("pong", { timestamp: msg.timestamp });
+  });
+
   socket.on("disconnect", () => {
     console.log("socket disconnected:", socket.id);
     const roomId = socket.data.roomId;

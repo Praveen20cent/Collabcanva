@@ -93,6 +93,19 @@ input[type="range"]::-moz-range-thumb {
 }
 .room-input::placeholder { color: var(--text-muted); }
 .room-status { margin-left: 12px; font-size: 11px; color: var(--text-muted); }
+.latency-display {
+  margin-left: 12px;
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-muted);
+  padding: 2px 6px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+.latency-display.good { color: var(--good); border-color: var(--good); }
+.latency-display.warning { color: #ff9800; border-color: #ff9800; }
+.latency-display.bad { color: #f44336; border-color: #f44336; }
 
 .btn {
   background: var(--surface);
